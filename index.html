@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script type="module">
+    import { getData, postData, putData, patchData, deleteData } from './api.js';
+
+    // Example usage of the functions
+    async function exampleUsage() {
+        // GET request
+        await getData('/posts/1');
+
+        // POST request
+        await postData('/posts', { title: 'foo', body: 'bar', userId: 1 });
+
+        // PUT request
+        await putData(1, { title: 'foo', body: 'bar', userId: 1 });
+
+        // PATCH request
+        await patchData(1, { title: 'foo updated' });
+
+        // DELETE request
+        await deleteData(1);
+    }
+
+    // Call example usage function
+    exampleUsage();
+</script>
+</body>
+</html>
